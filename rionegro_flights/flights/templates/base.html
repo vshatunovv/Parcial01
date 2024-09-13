@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Zona inicio</title>
+</head>
+
+<body>
+    <h1>Enlaces importantes:</h1>
+    <nav>
+        <a href="{% url 'registrar_vuelos' %}">Registrar Vuelos</a> |
+        <a href="{% url 'listar_vuelos' %}">Listar Vuelos</a> |
+        <a href="{% url 'estadisticas_vuelos' %}">Estadísticas de Vuelos</a>
+    </nav>
+    <hr>
+    {% block content %}
+    {% endblock %}
+</body>
+
+</html>

@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Listar Vuelos</h2>
+<table>
+    <tr>
+        <th>ID</th>
+        <th>Nombre</th>
+        <th>Tipo</th>
+        <th>Precio</th>
+    </tr>
+    {% for vuelo in vuelos %}
+    <tr>
+        <td>{{ vuelo.id }}</td>
+        <td>{% if vuelo.tipo == "Internacional" %}<strong>{{ vuelo.nombre }}</strong>{% else %}{{ vuelo.nombre }}{% endif %}</td>
+        <td>{{ vuelo.tipo }}</td>
+        <td>style="color: {% if vuelo.tipo == 'Nacional' %}blue{% endif %};">{{ vuelo.precio }}</td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}
